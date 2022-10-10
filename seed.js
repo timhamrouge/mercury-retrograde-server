@@ -15,4 +15,7 @@ mongoose.connect(process.env.DB_URL).then(() => {
 }).then(() => {
   console.log('disconnecting')
   mongoose.disconnect()
+}).catch(err => {
+  console.log(err);
+  mongoose.disconnect;
 })
