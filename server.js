@@ -9,8 +9,6 @@ app.get('/', function (req, res) {
   res.send('Hello Timbo')
 })
 
-app.get('/retrograde', function (req, res) {
-  getRetrogradeByDate
-})
+app.get('/retrograde', getRetrogradeByDate)
 
 app.listen(3000)
