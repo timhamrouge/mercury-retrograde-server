@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+const getRetrogradeByDate = require("./controllers/retrogradeController")
+
 app.use(express.json());
 
 app.get('/', function (req, res) {
@@ -8,7 +10,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/retrograde', function (req, res) {
-  res.send(`i will check ${req.query.date}`)
+  getRetrogradeByDate
 })
 
 app.listen(3000)
