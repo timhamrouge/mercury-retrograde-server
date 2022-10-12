@@ -1,12 +1,22 @@
 const dates = require("../models/dates");
 
 function getRetrogradeByDate(req,res,next) {
+  // this is subtracting an hour
   const isoDate = new Date(req.query.date)
   console.log('1', isoDate)
   return dates.findOne({
-    start_date: {
-      $gte: isoDate
-    },
+    $and: [{
+      'start_date' : {
+        $lte: isoDate
+      },
+      'end_date' : {
+        $gte: isoDate
+
+      }
+    }]
+    // start_date: {
+    //   $gte: isoDate
+    // },
     // end_date: {
     //   $lte: isoDate
     // }
