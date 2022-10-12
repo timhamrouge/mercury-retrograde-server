@@ -5,11 +5,11 @@ function getRetrogradeByDate(req,res,next) {
   console.log('1', isoDate)
   return dates.findOne({
     start_date: {
-      $gt: isoDate
+      $gte: isoDate
     },
-    end_date: {
-      $lt: isoDate
-    }
+    // end_date: {
+    //   $lte: isoDate
+    // }
   }).lean().then((retrograde) => {
   console.log('2', retrograde)
 
