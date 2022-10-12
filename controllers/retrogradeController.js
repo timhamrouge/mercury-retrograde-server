@@ -1,20 +1,21 @@
 const dates = require("../models/dates");
 
 function getRetrogradeByDate(req,res,next) {
-  console.log('1')
+  const isoDate = new Date(req.query.date)
+  console.log('1', isoDate)
   return dates.findOne({
     start_date: {
-      $gt: ISODate(req.query.date)
+      $gt: isoDate
     },
     end_date: {
-      $lt: ISODate(req.query.date)
+      $lt: isoDate
     }
   }).lean().then((retrograde) => {
-  console.log('2')
+  console.log('2', retrograde)
 
-    return Promise.all(retrograde)
+    return Promise.all([retrograde])
   }).then((x) => {
-  console.log('3')
+  console.log('3', x)
 
     return res.send({x})
   })
