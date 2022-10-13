@@ -17,6 +17,8 @@ function getRetrogradeByDate(req,res,next) {
     return Promise.all([retrograde])
   }).then((retrograde) => {
     return res.send({retrograde})
+  }).catch(err => {
+    next(err);
   })
  }
 
