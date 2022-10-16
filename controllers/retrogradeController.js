@@ -16,10 +16,12 @@ function getRetrogradeByDate(req,res,next) {
 
     return Promise.all([retrograde])
   }).then((retrograde) => {
+    if (retrograde.includes(null)) console.log('null')
+    else console.log('no')
     return res.send({retrograde})
   }).catch(err => {
     next(err);
   })
  }
-
+ 
 module.exports = getRetrogradeByDate
