@@ -16,9 +16,9 @@ function getRetrogradeByDate(req,res,next) {
 
     return Promise.all([retrograde])
   }).then((retrograde) => {
-    if (retrograde.includes(null)) console.log('null')
-    else console.log('no')
-    return res.send({retrograde})
+    let result = false;
+    if (retrograde.includes(null)) result = false;
+    return res.send({isRetrogrde: result})
   }).catch(err => {
     next(err);
   })
