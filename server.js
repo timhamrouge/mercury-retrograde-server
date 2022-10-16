@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = Promise;
 require('dotenv').config();
 
-const getRetrogradeByDate = require("./controllers/retrogradeController")
+const {getRetrogradeByDate, getRetrogradeTweetByDate} = require("./controllers/retrogradeController")
 
 app.use(express.json());
 
@@ -17,6 +17,8 @@ app.get('/', function (req, res) {
   res.send('Hello Timbo')
 })
 
-app.get('/retrograde', getRetrogradeByDate)
+app.get('/retrograde', getRetrogradeByDate);
+
+app.get('/tweet', getRetrogradeTweetByDate)
 
 app.listen(3000)
