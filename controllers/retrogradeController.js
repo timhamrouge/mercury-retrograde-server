@@ -14,8 +14,8 @@ async function getRetrogradeByDate(req,res,next) {
         }
       }]
     })
-    console.log('result', result)
-    return result;
+    // console.log('result', result)
+    return next(result);
   } catch {
     next(err);
   };

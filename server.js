@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 
 const mongoose = require("mongoose");
-mongoose.Promise = Promise;
 require('dotenv').config();
 
 const {getRetrogradeByDate, getRetrogradeTweetByDate} = require("./controllers/retrogradeController")
