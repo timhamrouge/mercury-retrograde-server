@@ -4,7 +4,7 @@ async function getRetrogradeByDate(req,res,next) {
   // pass in date as YYYY-mm-DD
 
   try {
-    return await dates.findOne({
+    const result =  await dates.findOne({
       $and: [{
         'start_date' : {
           $lte: req.query.date
@@ -14,9 +14,11 @@ async function getRetrogradeByDate(req,res,next) {
         }
       }]
     })
+    console.log('result', result)
+    return result;
   } catch {
     next(err);
-  }
+  };
 
   // return dates.findOne({
   //   $and: [{
