@@ -2,3 +2,5 @@
 - make an endpoint that will return a boolean instead of a date
 - tests
 - refactor the findOne method in the controller to be re-usable
+- linter maybe
+- typescript maybe

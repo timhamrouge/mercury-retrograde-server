@@ -85,4 +85,4 @@ async function getBooleanValueForDate(req,res,next) {
   })
  }
  
-module.exports = { getRetrogradeByDate, getRetrogradeTweetByDate, getBooleanValueForDate }
+module.exports = { getRetrogradeDatesByDate, getRetrogradeTweetByDate, getBooleanValueForDate }
