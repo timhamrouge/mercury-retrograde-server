@@ -4,7 +4,7 @@ const app = express()
 const mongoose = require("mongoose");
 require('dotenv').config();
 
-const {getRetrogradeByDate, getRetrogradeTweetByDate} = require("./controllers/retrogradeController")
+const {getBooleanValueForDate,getRetrogradeDatesByDate, getRetrogradeTweetByDate} = require("./controllers/retrogradeController")
 
 app.use(express.json());
 
@@ -16,7 +16,11 @@ app.get('/', function (req, res) {
   res.send('Hello Timbo')
 })
 
-app.get('/retrograde', getRetrogradeByDate);
+app.get('/retrograde-dates', getRetrogradeDatesByDate);
+
+app.get('/is-mercury-retrograde',
+getBooleanValueForDate
+);
 
 app.get('/tweet', getRetrogradeTweetByDate)
 
