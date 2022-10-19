@@ -24,7 +24,7 @@ async function getRetrogradeDatesByDate(req,res,next) {
 async function getBooleanValueForDate(req,res,next) {
   let result = true;
   try {
-    const result =  await dates.findOne({
+    const retrograde =  await dates.findOne({
       $and: [{
         'start_date' : {
           $lte: req.query.date
@@ -34,7 +34,7 @@ async function getBooleanValueForDate(req,res,next) {
         }
       }]
     })
-    if (retrograde.includes(null)) result = false;
+    if (!retrograde) result = false;
     return res.send({isRetrogrde: result})
   } catch (err) {
     next(err);
