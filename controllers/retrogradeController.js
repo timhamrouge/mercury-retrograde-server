@@ -2,19 +2,23 @@ const dates = require("../models/dates");
 // make a reusable method
 // pass in date as YYYY-mm-DD
 
+async function getRetrogradeInfoForDate(date) {
+  const result =  await dates.findOne({
+    $and: [{
+      'start_date' : {
+        $lte: date
+      },
+      'end_date' : {
+        $gte: date
+      }
+    }]
+  })
+  return result
+}
+
 async function getRetrogradeDatesByDate(req,res,next) {
   try {
-    const result =  await dates.findOne({
-      $and: [{
-        'start_date' : {
-          $lte: req.query.date
-        },
-        'end_date' : {
-          $gte: req.query.date
-        }
-      }]
-    })
-    console.log('result', result)
+    const result = await getRetrogradeInfoForDate(req.query.date)
     return res.send(result);
   } catch (err) {
     next(err);
