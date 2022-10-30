@@ -25,3 +25,5 @@ getBooleanValueForDate
 app.get('/tweet', getRetrogradeTweetByDate)
 
 app.listen(3000)
+
+module.exports - app;
