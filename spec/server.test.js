@@ -1,6 +1,6 @@
 const app = require("../app");
-const { expect } = require("chai");
-// const request = require("supertest")(app);
+const supertest = require('supertest');
+const requestWithSupertest = supertest(app);
 const mongoose = require("mongoose");
 
 describe("/", () => {
