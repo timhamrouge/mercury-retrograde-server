@@ -30,5 +30,11 @@
     "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "supertest": "^6.3.1"
-  }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
 }
