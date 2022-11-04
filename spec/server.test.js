@@ -4,8 +4,6 @@ const requestWithSupertest = supertest(app);
 const mongoose = require("mongoose");
 
 describe("/", () => {
-
-  after(() => mongoose.disconnect());
     it("GET returns status 200 and an object with all the topics", async () => {
       const res = await requestWithSupertest.get('/');
       // why you no work?
