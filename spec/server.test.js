@@ -9,8 +9,8 @@ afterEach(() => {
 
 describe("/", () => {
   it("GET returns status 200 and and hello tim", async () => {
-    const res = await requestWithSupertest.get('/');
-    expect(res.status).toEqual(200);
+    const res = await requestWithSupertest.get('/')
+    .expect(res.status).toEqual(200)
   })
 
   it("GET returns a boolean when ", async () => {
