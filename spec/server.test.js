@@ -1,20 +1,20 @@
-const request = require("supertest");
+const app = require("../server"); // Link to your server file
+const supertest = require("supertest");
+const request = supertest(app);
 
-const app = require("../server");
 // afterEach(() => {
 //   mongoose.disconnect();
 // });
 
-describe("Test example", () => {
-  test("GET /", (done) => {
-    request(app)
-      .get("/")
-      .expect("Content-Type", /json/)
-      .expect(200)
-      // More logic goes here
-  });
-  // More things come here
+it("Gets the test endpoint", async () => {
+  // Sends GET Request to /test endpoint
+  const res = await request.get("/");
+
+  expect(res.status).toBe(200);
+  expect(res.text).toBe("Hello Timbo");
+
 });
+
 
 
 xdescribe("/", () => {
