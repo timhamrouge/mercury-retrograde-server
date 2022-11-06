@@ -1,13 +1,23 @@
-const app = require("../server");
-const supertest = require('supertest');
-const requestWithSupertest = supertest(app);
-const mongoose = require("mongoose");
+const request = require("supertest");
 
-afterEach(() => {
-  mongoose.disconnect();
+const app = require("../server");
+// afterEach(() => {
+//   mongoose.disconnect();
+// });
+
+describe("Test example", () => {
+  test("GET /", (done) => {
+    request(app)
+      .get("/")
+      .expect("Content-Type", /json/)
+      .expect(200)
+      // More logic goes here
+  });
+  // More things come here
 });
 
-describe("/", () => {
+
+xdescribe("/", () => {
   it("GET returns status 200 and and hello tim", async () => {
     const res = await requestWithSupertest.get('/')
     .expect(res.status).toEqual(200)
