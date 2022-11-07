@@ -5,9 +5,6 @@ const mongoose = require("mongoose");
 
 // figure out how to supress the 'Jest did not exit one second after the test run has completed.' issue
 
-afterAll(() => {
-  app.clo
-});
 
 it("Gets the test endpoint", async () => {
   // Sends GET Request to /test endpoint
@@ -19,10 +16,11 @@ it("Gets the test endpoint", async () => {
 
 
 
-describe("/", () => {
+describe("/is-mercury-retrograde", () => {
   it("GET returns status 200 and true when passed ", async () => {
     const res = await request.get('/is-mercury-retrograde?date=2023-04-21')
     expect(res.status).toEqual(200)
-    console.log(res.body)
+    expect(res.body).toEqual({isRetrograde: true})
+
   })
 });
