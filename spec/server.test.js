@@ -19,13 +19,10 @@ it("Gets the test endpoint", async () => {
 
 
 
-xdescribe("/", () => {
-  it("GET returns status 200 and and hello tim", async () => {
-    const res = await requestWithSupertest.get('/')
-    .expect(res.status).toEqual(200)
-  })
-
-  it("GET returns a boolean when ", async () => {
-
+describe("/", () => {
+  it("GET returns status 200 and true when passed ", async () => {
+    const res = await request.get('/is-mercury-retrograde?date=2023-04-21')
+    expect(res.status).toEqual(200)
+    console.log(res.body)
   })
 });
