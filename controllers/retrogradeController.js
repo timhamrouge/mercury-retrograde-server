@@ -39,7 +39,7 @@ async function getBooleanValueForDate(req,res,next) {
       }]
     })
     if (!retrograde) result = false;
-    return res.send({isRetrogrde: result})
+    return res.send({isRetrograde: result})
   } catch (err) {
     next(err);
   };
