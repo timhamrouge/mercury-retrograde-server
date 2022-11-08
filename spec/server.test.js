@@ -27,7 +27,7 @@ describe("/is-mercury-retrograde", () => {
     it("returns false when passed a date when mercury is not in retrograde", async() => {
       const res = await request.get('/is-mercury-retrograde?date=2023-02-01')
       expect(res.status).toEqual(200)
-      expect(res.body).toEqual({isRetrgrade: false})
+      expect(res.body).toEqual({isRetrograde: false})
     });
 
   })
