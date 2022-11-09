@@ -32,3 +32,20 @@ describe("/is-mercury-retrograde", () => {
 
   })
 });
+
+describe("/retrograde-dates", () => {
+  describe("GET returns status 200 and a boolean when passed a date", () => {
+    it("returns true when passed a date when mercury is in retrograde", async() => {
+      const res = await request.get('/is-mercury-retrograde?date=2023-04-21')
+      expect(res.status).toEqual(200)
+      expect(res.body).toEqual({isRetrograde: true})
+    });
+
+    it("returns false when passed a date when mercury is not in retrograde", async() => {
+      const res = await request.get('/is-mercury-retrograde?date=2023-02-01')
+      expect(res.status).toEqual(200)
+      expect(res.body).toEqual({isRetrograde: false})
+    });
+
+  })
+});
