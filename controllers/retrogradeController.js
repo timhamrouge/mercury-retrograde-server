@@ -19,6 +19,7 @@ async function getRetrogradeInfoForDate(date) {
 async function getRetrogradeDatesByDate(req,res,next) {
   try {
     const result = await getRetrogradeInfoForDate(req.query.date)
+    console.log(result)
     return res.send(result);
   } catch (err) {
     next(err);
