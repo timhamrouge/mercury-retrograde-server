@@ -1,6 +1,4 @@
-- deploy the db to mlab? and deploy the server to heroku
-- make an endpoint that will return a boolean instead of a date
-- tests
-- refactor the findOne method in the controller to be re-usable
+- deploy the db to mlab? and deploy the server to heroku - can't do that because heroku is a stinker. so find an alternative
+- refactor the findOne method in the controller to be re-usable is it?
 - linter maybe
 - typescript maybe
