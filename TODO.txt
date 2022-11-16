@@ -1,4 +1,3 @@
-- deploy the db to mlab? and deploy the server to heroku - can't do that because heroku is a stinker. so find an alternative
-- refactor the findOne method in the controller to be re-usable is it?
+- deploy the server to Deta? then seed the database on MongoDB Atlas
 - linter maybe
 - typescript maybe
