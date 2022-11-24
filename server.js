@@ -13,6 +13,7 @@ mongoose.connect(process.env.DB_URL).then(() => {
 })
 
 app.get('/', function (req, res) {
+  console.log('root')
   res.send('Hello Timbo')
 })
 
