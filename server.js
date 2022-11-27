@@ -13,7 +13,7 @@ mongoose.connect(process.env.DB_URL).then(() => {
 })
 
 app.get('/', function (req, res) {
-  res.send('Hello Timbo')
+  res.send('Hello Timbo, ')
 })
 
 app.get('/retrograde-dates', getRetrogradeDatesByDate)
